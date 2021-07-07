@@ -106,7 +106,7 @@ RunRandom(
         {
             printf_s("\n\nDBG");
             LOG_ERRCODE(retCode);
-            //break;
+            break;
         }
 
         auto response = ((PTPM_RAND_RESPONSE)requestCmd);
@@ -127,9 +127,6 @@ RunRandom(
 
         deleteCommand(requestCmd);
         requestCmd = NULL;
-        /// 
-        /*deleteCommand(responseCmd);
-        responseCmd = NULL;*/
     }
 }
 

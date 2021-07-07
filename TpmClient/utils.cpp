@@ -285,24 +285,25 @@ initCommandRquRand(
     return;
 }
 
+// todo: add _In_ buffer and cast it to contexthandle to submit
 
-void submitCommand()
-{
-
-    auto retCode = Tbsip_Submit_Command(
-        gTpm.ContextHandle,
-        TBS_COMMAND_LOCALITY_ZERO,      // only one currently supported
-        TBS_COMMAND_PRIORITY_MAX,    // Used for normal priority application use. // [!] TBS_COMMAND_PRIORITY_HIGH - Used for high priority application use.
-        (PCBYTE)requestCmd, sizeof(TPM_RAND_REQUEST),
-        (PBYTE)requestCmd, &resBytes                       // [!] If the supplied buffer is too small, this parameter, on output, is set to the required size, in bytes, for the result.
-    );
-
-    printf_s("\n after resBytes: [%d]\n", resBytes);
-
-    if (retCode != TBS_SUCCESS)
-    {
-        printf_s("\n\nDBG");
-        LOG_ERRCODE(retCode);
-        //break;
-    }
-}
+//void submitCommand()
+//{
+//
+//    auto retCode = Tbsip_Submit_Command(
+//        gTpm.ContextHandle,
+//        TBS_COMMAND_LOCALITY_ZERO,      // only one currently supported
+//        TBS_COMMAND_PRIORITY_MAX,    // Used for normal priority application use. // [!] TBS_COMMAND_PRIORITY_HIGH - Used for high priority application use.
+//        (PCBYTE)requestCmd, sizeof(TPM_RAND_REQUEST),
+//        (PBYTE)requestCmd, &resBytes                       // [!] If the supplied buffer is too small, this parameter, on output, is set to the required size, in bytes, for the result.
+//    );
+//
+//    printf_s("\n after resBytes: [%d]\n", resBytes);
+//
+//    if (retCode != TBS_SUCCESS)
+//    {
+//        printf_s("\n\nDBG");
+//        LOG_ERRCODE(retCode);
+//        //break;
+//    }
+//}

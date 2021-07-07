@@ -1,8 +1,6 @@
 #include "main.h"
 
 
-
-
 VOID
 RunCommand(
     _In_ enum TPM_CMD_TYPE Type
